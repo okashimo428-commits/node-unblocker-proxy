@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Node Unblocker Proxy</title>
+</head>
+<body>
+  <h1>Node Unblocker Proxy</h1>
+  <form id="proxyForm">
+    <input type="text" id="url" placeholder="https://www.youtube.com/" size="50" required>
+    <button type="submit">Go</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('proxyForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const url = document.getElementById('url').value;
+      // Node Unblocker Proxy のサーバー経由で開く
+      window.location.href = '/' + url;
+    });
+  </script>
+</body>
+</html>
