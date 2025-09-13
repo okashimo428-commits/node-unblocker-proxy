@@ -15,9 +15,13 @@
     const form = document.getElementById('proxyForm');
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const url = document.getElementById('url').value;
-      // Node Unblocker Proxy のサーバー経由で開く
-      window.location.href = '/' + url;
+      let url = document.getElementById('url').value;
+
+      // URL の先頭の https:// を削除してエンコード
+      url = encodeURIComponent(url);
+
+      // /proxy/ プレフィックスをつけてリダイレクト
+      window.location.href = '/proxy/' + url;
     });
   </script>
 </body>
